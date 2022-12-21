@@ -65,52 +65,61 @@
       </header>
     </div>
 
-    <div class="container col-lg-8 mx-auto">
-      <p class="lead mb-6">
-      На данной  странице можно найти основополагающие документы СКМ, 
-      список активных участников, информацию по прошедшим и будущим встречам и инициативам
-      совета Московского Кампуса Школы 21.
-      </p>
-      <p class="lead mb-6">
-        Есть идеи, как сделать жизнь в школе лучше и комфортнее? 
-      </p>
-      <p class="lead mb-6">
-        Хочешь предложить что-то совету или дать обратную связь?
-      </p>
-      <p class="lead mb-6">
-        Ждём твоё сообщение в форме ниже 👇 или напиши участнику СКМ в слаке
-      </p>
-      <form id="feedback">
-        <div class="col-12">
-          <div class="input-group has-validation">
-            <span class="input-group-text">@</span>
-            <input type="text" class="form-control" name="name" placeholder="Ник на платформе" required="">
-            <div class="invalid-feedback">
-              Нужно указать ваш ник на сберплатформе/интре
+    <div class="container col-lg-12 mx-auto">
+      <div class="row">
+        <div class="col-9">
+          <p class="lead mb-6">
+          На данной  странице можно найти основополагающие документы СКМ, 
+          список активных участников, информацию по прошедшим и будущим встречам и инициативам
+          совета Московского Кампуса Школы 21.
+          </p>
+          <p class="lead mb-6">
+            Есть идеи, как сделать жизнь в школе лучше и комфортнее? 
+          </p>
+          <p class="lead mb-6">
+            Хочешь предложить что-то совету или дать обратную связь?
+          </p>
+          <p class="lead mb-6">
+            Ждём твоё сообщение в форме
+          </p>
+        </div>
+        <div class="col-3">
+          <form id="feedback">
+            <div class="col-12">
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" name="name" placeholder="Ник на платформе" required="">
+                <div class="invalid-feedback">
+                  Нужно указать ваш ник на сберплатформе/интре
+                </div>
+              </div>
             </div>
-          </div>
+    
+            <div class="col-12">
+              <select class="form-select" name="tribe" required="">
+                <option value="">Выбери трайб (коалицию)...</option>
+                <option>Альпаки</option>
+                <option>Капибары</option>
+                <option>Медоеды</option>
+                <option>Саламандры</option>
+              </select>
+              <div class="invalid-feedback">
+                Выберите из какого вы трайба (коалиции)
+              </div>
+            </div>
+    
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Сообщение для СКМ" name="message" style="height: 100px" required=""></textarea>
+              <label for="message">Текст сообщения</label>
+              <div class="invalid-feedback">
+                Напишите текст сообщения для СКМ
+              </div>
+            </div>
+    
+            <button type="submit" class="btn btn-primary col-12">Отправить в СКМ</button>
+          </form>
         </div>
-
-        <div class="col-md-5">
-          <select class="form-select" name="tribe" required="">
-            <option value="">Выбери трайб (коалицию)...</option>
-            <option>Альпаки</option>
-            <option>Капибары</option>
-            <option>Медоеды</option>
-            <option>Саламандры</option>
-          </select>
-          <div class="invalid-feedback">
-            Выберите из какого вы трайба (коалиции)
-          </div>
-        </div>
-
-        <div class="form-floating">
-          <textarea class="form-control" placeholder="Сообщение для СКМ" name="message" style="height: 100px"></textarea>
-          <label for="message">Текст сообщения</label>
-        </div>
-
-        <input class="w-100 btn btn-primary btn-lg" type="submit" >Отправить в СКМ</button>
-      </form>
+      </div>
     </div>
 
     <script>
@@ -120,11 +129,8 @@
         const name = `${encodeURIComponent(formData.get('name'))}`;
         const tribe = `${encodeURIComponent(formData.get('tribe'))}`;
         const message = `${encodeURIComponent(formData.get('message'))}`;
-        let response = await fetch(`https://github.com/21mcc/projects/issues/new?title=${name}(${tribe})&body=${message}`, {
-          method: 'GET'
-        });
-        let result = await response.json();
-        alert(result.message);
+        const url = `https://github.com/21mcc/projects/issues/new?title=${name}(${tribe})&body=${message}`;
+        window.open(url, '_blank').focus();
       }
     </script>
     
