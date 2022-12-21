@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="favicon.ico">
     <title>Совет Кампуса Москвы</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous" rel="stylesheet" >
   </head>
 
   <body>
@@ -125,15 +127,62 @@
     <script>
       document.forms.feedback.onsubmit = async (e) => {
         e.preventDefault();
+
+        // Получаем ID проекта
+        const url = "https://api.github.com/graphql";
+        const auth = 'Bearer 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';
+        const organization = '21mcc';
+        const project_number = '3';
+        var data_id = {
+          "query":`query {
+            organization(login: \"${organization}\") 
+            {projectV2(number: ${project_number}){id}}
+          }`
+        };
+        let response_id = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Authorization': `${auth}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data_id)
+        });
+
+        // Зная ID проекта можем создать в нём issue
+        let result_id = await response_id.json();
+        var project_id = result_id.data.organization.projectV2.id;
         const formData = new FormData(document.forms.feedback);
-        const name = `${encodeURIComponent(formData.get('name'))}`;
-        const tribe = `${encodeURIComponent(formData.get('tribe'))}`;
-        const message = `${encodeURIComponent(formData.get('message'))}`;
-        const url = `https://github.com/21mcc/projects/issues/new?title=${name}(${tribe})&body=${message}`;
-        window.open(url, '_blank').focus();
+        const name = formData.get('name');
+        const tribe = formData.get('tribe');
+        const message = formData.get('message');
+        var title = `Сообщение от ${name} (${tribe})`;
+        var data = {
+          "query":`mutation {
+            addProjectV2DraftIssue(input: {projectId: \"${project_id}\" title: \"${title}\" body: \"${message}\"}) 
+            {projectItem {id}}
+          }`
+        };
+
+        let response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Authorization': `${auth}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        let result = await response.json();
+        let id = result.data.addProjectV2DraftIssue.projectItem.id
+        if (id) {
+          alert(`Сообщение в СКМ от ${name} (${tribe}) отправлено`);
+          document.forms.feedback.reset();
+        }
       }
     </script>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
+    crossorigin="anonymous"/>
   </body>
 </html>
