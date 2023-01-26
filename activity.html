@@ -11,18 +11,16 @@
   </head>
 
   <body>
-    <img src="./img/activity.jpg" referrerpolicy="same-origin" class="col-12" style="height: 30vh; object-fit: cover">
+    <img src="./img/header/activity.jpg" referrerpolicy="same-origin" class="col-12" style="height: 30vh; object-fit: cover">
     
     <header class="container d-flex flex-wrap py-3 mb-4">
       <nav aria-label="breadcrumb" class="me-md-auto">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item active fs-4" aria-current="page">Совет Кампуса Москвы</li>
+          <li class="breadcrumb-item fs-4"><a href="index.html">Совет Кампуса Москвы</a></li>
+          <li class="breadcrumb-item fs-4 active" aria-current="page">Деятельность</li>
         </ol>
       </nav>
       <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">СКМ</a>
-        </li>
         <li class="nav-item">
             <a href="activity.html" class="nav-link active">Деятельность</a>
         </li>
@@ -40,125 +38,176 @@
 
     <article class="container">
 
-        <h2>Сообщество</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-            <div class="feature col">
-                <p>11 апреля 2022</p>
-                <h3>Создание<br/>AntiSlack</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/antislack/antislack.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h1>👥 Сообщество</h1></li>
+            <div class="row g-4 py-3 row-cols-1 row-cols-lg-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">11 апреля 2022</div>
+                        <a href="https://t.me/antislack" target="_blank">
+                            <img src="./img/activity/antislack.jpg" class="card-img-top" alt="Создание AntiSlack">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Создание <a href="https://t.me/antislack" target="_blank">AntiSlack</a></h5>
+                            <p class="card-text">Канал в Telegram с различными неофициальными новостями из школы 21</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">27 сентября 2022</div>
+                        <a href="https://21world.ru/" target="_blank">
+                            <img src="./img/activity/21world.jpg" class="card-img-top" alt="Запустился 21world.ru">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Запустился <a href="https://21world.ru/" target="_blank">21world.ru</a></h5>
+                            <p class="card-text">Карта, на которой пиры могут отметить, где по миру они сейчас находятся</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">25 октября 2022</div>
+                        <img src="./img/activity/peer-monitor.jpg" class="card-img-top" alt="Перезапуск монитора пиров">
+                        <div class="card-body">
+                            <h5 class="card-title">Монитор пиров</h5>
+                            <p class="card-text">Перезапуск монитора пиров. Теперь на 2м этаже можно смотреть, где сидят пиры из разных трайбов и платформ</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="feature col">
-                <p>27 сентября 2022</p>
-                <h3>Запустился<br/>21world.ru</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/21world/21world.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-            <div class="feature col">
-                <p>25 октября 2022</p>
-                <h3>Перезапуск<br/>монитора пиров</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/peer-monitor/peer-monitor.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-        </div>
 
-        <h2>✨Ивенты✨</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-            <div class="feature col">
-                <p>26 апреля 2022</p>
-                <h3>Посвящение<br/>13 волны</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/initiation13/initiation13.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
+            <li class="list-group-item"><h1>✨ Ивенты</h1></li>
+            <div class="row g-4 py-3 row-cols-1 row-cols-lg-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">26 апреля 2022</div>
+                        <img src="./img/activity/init-13.jpg" class="card-img-top" alt="Посвящение 13 волны">
+                        <div class="card-body">
+                            <h5 class="card-title">Посвящение 13 волны</h5>
+                            <p class="card-text">Студенты 13й волны разбились на команды и бегали по кампусу, выполняя задания</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">25 июля 2022</div>
+                        <img src="./img/activity/it-barbecue.jpg" class="card-img-top" alt="IT-шашлыки">
+                        <div class="card-body">
+                            <h5 class="card-title">IT-шашлыки</h5>
+                            <p class="card-text">Всей школой выехали на шашлыки в парк Останкино, где ели, общались и играли</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">30 июля 2022</div>
+                        <img src="./img/activity/code-on-prod.jpg" class="card-img-top" alt="Код на прод">
+                        <div class="card-body">
+                            <h5 class="card-title">Код на прод</h5>
+                            <p class="card-text">Мероприятие, на котором работающие пиры рассказывают остальным о себе и своей работе</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">27 октября 2022</div>
+                        <img src="./img/activity/init-16.jpg" class="card-img-top" alt="Посвящение 16 волны">
+                        <div class="card-body">
+                            <h5 class="card-title">Посвящение 16 волны</h5>
+                            <p class="card-text">Студенты 16й волны разбились на команды и бегали по кампусу, выполняя задания</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="feature col">
-                <p>27 октября 2022</p>
-                <h3>Посвящение<br/>16 волны</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/initiation16/initiation16.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-            <div class="feature col">
-                <p>25 июля 2022</p>
-                <h3><br/>IT-шашлыки</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/it-barbecue/it-barbecue.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-            <div class="feature col">
-                <p>30 июля 2022</p>
-                <h3><br/>Код на прод</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/code-on-prod/code-on-prod.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-        </div>
 
-        <h2>Кампус</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-            <div class="feature col">
-                <p>22 апреля 2022</p>
-                <h3>Темный кластер<br/>Иллюжн с ноутами</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/dark-claster/dark-claster.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
+            <li class="list-group-item"><h1>🏢 Кампус</h1></li>
+            <div class="row g-4 py-3 row-cols-1 row-cols-lg-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">5 марта 2022</div>
+                        <img src="./img/activity/gaming-room.jpg" class="card-img-top" alt="IT-шашлыки">
+                        <div class="card-body">
+                            <h5 class="card-title">Игровая перезапущена</h5>
+                            <p class="card-text">В отдельной комнтате теперь расположены приставки, пуфики и игры - можно спокойно играть</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">22 апреля 2022</div>
+                        <img src="./img/activity/empty.jpg" class="card-img-top" alt="Посвящение 13 волны">
+                        <div class="card-body">
+                            <h5 class="card-title">Темный кластер</h5>
+                            <p class="card-text">В школе появился тёмный кластер - mirage и в illusion теперь можно сидеть с ноутбуками</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">30 апреля 2022</div>
+                        <img src="./img/activity/music-room.jpg" class="card-img-top" alt="Посвящение 16 волны">
+                        <div class="card-body">
+                            <h5 class="card-title">Музыкалка запущена</h5>
+                            <p class="card-text">В зале акселератора открыта музыкальная комната с большим количеством музыкальных инструментов</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">16 июня 2022</div>
+                        <img src="./img/activity/soft-bags.jpg" class="card-img-top" alt="Код на прод">
+                        <div class="card-body">
+                            <h5 class="card-title">Мягкие мешки</h5>
+                            <p class="card-text">Наконец-то в Атриум были завезены много мягких мешков в цвета трайбов</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="feature col">
-                <p>30 апреля 2022</p>
-                <h3>Музыкалка<br/>запущена</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/music-room/music-room.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
+            <div class="row g-4 row-cols-1 row-cols-lg-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">28 июня 2022</div>
+                        <img src="./img/activity/salamander-corner.jpg" class="card-img-top" alt="Посвящение 13 волны">
+                        <div class="card-body">
+                            <h5 class="card-title">Уголок Саламандр</h5>
+                            <p class="card-text">У Саламандр появился свой уголок, на 1м этаже. Теперь есть где общаться с сотрайбовцами и друзьями</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">6 сентября 2022</div>
+                        <img src="./img/activity/empty.jpg" class="card-img-top" alt="Посвящение 16 волны">
+                        <div class="card-body">
+                            <h5 class="card-title">Атлантис с ноутами</h5>
+                            <p class="card-text">Теперь и в кластере Atlantis можно сидеть со своими ноутбуками. Особенно удобно на проектах ветки DevOps</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">26 октября 2022</div>
+                        <img src="./img/activity/photowall-update.jpg" class="card-img-top" alt="IT-шашлыки">
+                        <div class="card-body">
+                            <h5 class="card-title">Обновили фотостену</h5>
+                            <p class="card-text">С фотостены с помощью голосования убрали малопопулярные фото и добавили новые фотографии</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header">2 ноября 2022</div>
+                        <img src="./img/activity/kitchen2.jpg" class="card-img-top" alt="Код на прод">
+                        <div class="card-body">
+                            <h5 class="card-title">Кухня 2.0</h5>
+                            <p class="card-text">Кухня на 2м этаже преобразилась и теперь в неё благодаря добровольным взносам пиров появляется чай, кофе и прочее</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="feature col">
-                <p>5 марта 2022</p>
-                <h3>Перезапуск<br/>игровой комнаты</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/gaming-room/gaming-room.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-            <div class="feature col">
-                <p>16 июня 2022</p>
-                <h3>Мягкие мешки<br/>в Атриуме</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/soft-bags/soft-bags.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-        </div>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-            <div class="feature col">
-                <p>28 июня 2022</p>
-                <h3>Уголок<br/>Саламандр</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/salamander-corner/salamander-corner.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-            <div class="feature col">
-                <p>6 сентября 2022</p>
-                <h3>Атлантис<br/>с ноутами</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/atlantis/atlantis.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-            <div class="feature col">
-                <p>26 октября 2022</p>
-                <h3>Обновили<br/>фотостену</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/photowall-update/photowall-update.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-            <div class="feature col">
-                <p>2 ноября 2022</p>
-                <h3>Кухня<br/>2.0</h3>
-                <svg class="bd-placeholder-img rounded shadow-lg bg-body" width="200" height="200" role="img" focusable="false">
-                    <image href="./activity/kitchen/kitchen.jpg"  width="200" height="200" preserveAspectRatio="xMidYMid slice"/>
-                </svg>
-            </div>
-        </div>
 
+        </ul>
     </article>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
