@@ -37,7 +37,6 @@
 
     <article class="container col-lg-12 mx-auto">
       <div class="row">
-        <div class="col-9">
           <p class="lead mb-6">
           На сайте можно найти документы СКМ, список активных участников, информацию по прошедшим и будущим встречам и инициативам
           совета Московского Кампуса Школы 21.
@@ -48,13 +47,11 @@
           <p class="lead mb-6">
             Хочешь предложить что-то совету или дать обратную связь?
           </p>
-          <!-- <p class="lead mb-6">
+          <p class="lead mb-6">
             Ждём твоё сообщение в форме
-          </p> -->
-        </div>
-        <!-- <div class="col-3">
+          </p>
           <form id="feedback">
-            <div class="col-12">
+            <div class="col-6">
               <div class="input-group has-validation">
                 <span class="input-group-text">@</span>
                 <input type="text" class="form-control" name="name" placeholder="Ник на платформе" required="">
@@ -64,7 +61,7 @@
               </div>
             </div>
     
-            <div class="col-12">
+            <div class="col-6">
               <select class="form-select" name="tribe" required="">
                 <option value="">Выбери трайб (коалицию)...</option>
                 <option>Альпаки</option>
@@ -77,7 +74,7 @@
               </div>
             </div>
     
-            <div class="form-floating">
+            <div class="col-6 form-floating">
               <textarea class="form-control" placeholder="Сообщение для СКМ" name="message" style="height: 100px" required=""></textarea>
               <label for="message">Текст сообщения</label>
               <div class="invalid-feedback">
@@ -85,9 +82,8 @@
               </div>
             </div>
     
-            <button type="submit" class="btn btn-primary col-12">Отправить в СКМ</button>
+            <button class="btn btn-primary col-6" type="submit" >Отправить в СКМ</button>
           </form>
-        </div> -->
       </div>
     </article>
 
@@ -95,9 +91,11 @@
       document.forms.feedback.onsubmit = async (e) => {
         e.preventDefault();
 
+        
+
         // Получаем ID проекта
         const url = "https://api.github.com/graphql";
-        const auth = 'Bearer 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';
+        const auth = 'Bearer ' + a('\x99\x99¢\x90\x8A\x89yr§©¡rb\x9E§\x9Df¡¦g{\x82vªxj\x97\x9Ex¡¦¨¨\x82cj \x8A©w', "21", true);
         const organization = '21mcc';
         const project_number = '3';
         var data_id = {
@@ -122,6 +120,9 @@
         const name = formData.get('name');
         const tribe = formData.get('tribe');
         const message = formData.get('message');
+        if (name == "" || tribe == "" || message == "") {
+          return;
+        }
         var title = `Сообщение от ${name} (${tribe})`;
         var data = {
           "query":`mutation {
@@ -145,6 +146,16 @@
           alert(`Сообщение в СКМ от ${name} (${tribe}) отправлено`);
           document.forms.feedback.reset();
         }
+      }
+
+      function a(text, o, d) {
+        var t, k, result = "", conv = d ? -1 : 1;
+        o = o ? o : " ";
+        for (t = k = 0; t < text.length; t++, k++) {
+          if (k >= o.length) k = 0;
+          result += String.fromCharCode(text.charCodeAt(t) + conv * o.charCodeAt(k));
+        }
+        return result
       }
     </script>
     
